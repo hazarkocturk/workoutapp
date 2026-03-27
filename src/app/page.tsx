@@ -1,7 +1,12 @@
+import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Hello World</h1>
-    </main>
+    <HeroGeometric
+      badge="WorkoutApp"
+      title1="Daha Güçlü Ol"
+      title2="Her Gün Daha İyi"
+    >
+    </HeroGeometric>
   );
 }

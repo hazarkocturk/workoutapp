@@ -54,3 +54,11 @@ npx drizzle-kit push     # Push schema to database
 ## Migration Strategy
 
 `drizzle-kit push` does not handle type changes (e.g. integer → uuid). For breaking schema changes, use Neon MCP (`mcp__neon__run_sql_transaction`) to DROP and recreate tables manually, then re-run the seed script.
+
+## UI & Styling Rules
+
+See [`docs/ui.md`](docs/ui.md) for full guidelines. Summary:
+
+- **ALWAYS** use **shadcn/ui** components — never create custom components from scratch
+- Add new components via `npx shadcn@latest add <component>`
+- **ALWAYS** use **date-fns** for date formatting with the `"do MMM yyyy"` format (e.g. `1st Sep 2025`)

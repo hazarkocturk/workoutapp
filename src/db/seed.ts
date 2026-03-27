@@ -69,7 +69,7 @@ async function seedWorkouts(exerciseIds: Record<string, string>) {
 
   // Workout 1: Chest + Triceps (18 gün önce)
   const [w1] = await db.insert(schema.workouts)
-    .values({ userId: USER_1, date: daysAgo(18) })
+    .values({ userId: USER_1, title: 'Push A', date: daysAgo(18) })
     .returning();
 
   const [we1a] = await db.insert(schema.workoutExercises)
@@ -101,7 +101,7 @@ async function seedWorkouts(exerciseIds: Record<string, string>) {
 
   // Workout 2: Back + Biceps (15 gün önce)
   const [w2] = await db.insert(schema.workouts)
-    .values({ userId: USER_1, date: daysAgo(15) })
+    .values({ userId: USER_1, title: 'Pull A', date: daysAgo(15) })
     .returning();
 
   const [we2a] = await db.insert(schema.workoutExercises)
@@ -133,7 +133,7 @@ async function seedWorkouts(exerciseIds: Record<string, string>) {
 
   // Workout 3: Legs (11 gün önce)
   const [w3] = await db.insert(schema.workouts)
-    .values({ userId: USER_1, date: daysAgo(11) })
+    .values({ userId: USER_1, title: 'Leg Day', date: daysAgo(11) })
     .returning();
 
   const [we3a] = await db.insert(schema.workoutExercises)
@@ -156,7 +156,7 @@ async function seedWorkouts(exerciseIds: Record<string, string>) {
 
   // Workout 4: Shoulders (7 gün önce)
   const [w4] = await db.insert(schema.workouts)
-    .values({ userId: USER_1, date: daysAgo(7) })
+    .values({ userId: USER_1, title: 'Shoulders', date: daysAgo(7) })
     .returning();
 
   const [we4a] = await db.insert(schema.workoutExercises)
@@ -179,7 +179,7 @@ async function seedWorkouts(exerciseIds: Record<string, string>) {
 
   // Workout 5: Chest + Triceps (3 gün önce)
   const [w5] = await db.insert(schema.workouts)
-    .values({ userId: USER_1, date: daysAgo(3) })
+    .values({ userId: USER_1, title: 'Push B', date: daysAgo(3) })
     .returning();
 
   const [we5a] = await db.insert(schema.workoutExercises)
@@ -204,7 +204,7 @@ async function seedWorkouts(exerciseIds: Record<string, string>) {
 
   // Workout 6: Full Body A (13 gün önce)
   const [w6] = await db.insert(schema.workouts)
-    .values({ userId: USER_2, date: daysAgo(13) })
+    .values({ userId: USER_2, title: 'Full Body A', date: daysAgo(13) })
     .returning();
 
   const [we6a] = await db.insert(schema.workoutExercises)
@@ -236,7 +236,7 @@ async function seedWorkouts(exerciseIds: Record<string, string>) {
 
   // Workout 7: Full Body B (9 gün önce)
   const [w7] = await db.insert(schema.workouts)
-    .values({ userId: USER_2, date: daysAgo(9) })
+    .values({ userId: USER_2, title: 'Full Body B', date: daysAgo(9) })
     .returning();
 
   const [we7a] = await db.insert(schema.workoutExercises)
@@ -259,7 +259,7 @@ async function seedWorkouts(exerciseIds: Record<string, string>) {
 
   // Workout 8: Full Body A (5 gün önce)
   const [w8] = await db.insert(schema.workouts)
-    .values({ userId: USER_2, date: daysAgo(5) })
+    .values({ userId: USER_2, title: 'Full Body A', date: daysAgo(5) })
     .returning();
 
   const [we8a] = await db.insert(schema.workoutExercises)

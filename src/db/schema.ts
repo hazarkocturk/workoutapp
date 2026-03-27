@@ -28,6 +28,7 @@ export const workouts = pgTable(
   {
     id: uuid().primaryKey().defaultRandom(),
     userId: varchar("user_id", { length: 255 }).notNull(),
+    title: varchar({ length: 255 }),
     date: timestamp().notNull().defaultNow(),
     createdAt: timestamp("created_at").notNull().defaultNow(),
   },

@@ -55,6 +55,24 @@ npx drizzle-kit push     # Push schema to database
 
 `drizzle-kit push` does not handle type changes (e.g. integer → uuid). For breaking schema changes, use Neon MCP (`mcp__neon__run_sql_transaction`) to DROP and recreate tables manually, then re-run the seed script.
 
+## IMPORTANT: Docs Reference Before Coding
+
+**Before generating any code**, always read the relevant file(s) in `docs/` first:
+
+- Writing UI or components → read [`docs/ui.md`](docs/ui.md)
+- Writing data fetching or queries → read [`docs/data-fetching.md`](docs/data-fetching.md)
+
+Never assume the rules — always read the doc file before writing code.
+
+## Data Fetching Rules
+
+See [`docs/data-fetching.md`](docs/data-fetching.md) for full guidelines. Summary:
+
+- **ALWAYS** fetch data in **Server Components** — never in Client Components
+- **NEVER** use Route Handlers (`app/api/`) for internal data fetching
+- **ALWAYS** use **Drizzle ORM** — no raw SQL, no fetch calls
+- **ALWAYS** define query functions in `src/db/helpers/` (one file per domain)
+
 ## UI & Styling Rules
 
 See [`docs/ui.md`](docs/ui.md) for full guidelines. Summary:

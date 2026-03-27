@@ -3,6 +3,7 @@ import { ClerkProvider, SignInButton, SignUpButton, Show, UserButton } from "@cl
 import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -17,23 +18,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en" className={cn("dark font-sans", geist.variable)}>
       <body>
         <ClerkProvider>
           <header className="flex items-center justify-between px-6 py-4 border-b border-white/10">
             <span className="text-white font-bold text-lg tracking-tight">💪 WorkoutApp</span>
             <div className="flex items-center gap-3">
               <Show when="signed-out">
-                <SignInButton>
-                  <button className="px-4 py-2 text-sm font-medium text-black bg-white rounded-lg hover:bg-gray-100 transition-colors">
-                    Sign In
-                  </button>
-                </SignInButton>
-                <SignUpButton>
-                  <button className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors">
-                    Sign Up
-                  </button>
-                </SignUpButton>
+                <div className="flex items-center gap-3">
+                  <SignInButton>
+                    <Button variant="secondary" className="bg-blue-700 hover:bg-blue-800 text-white">Sign In</Button>
+                  </SignInButton>
+                  <SignUpButton>
+                    <Button>Sign Up</Button>
+                  </SignUpButton>
+                </div>
               </Show>
               <Show when="signed-in">
                 <UserButton />

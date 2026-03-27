@@ -1,3 +1,7 @@
 {
-  "outputStyle": "Learning"
+  "enabledMcpjsonServers": [
+    "neon"
+  ],
+  "outputStyle": "Learning",
+  "enableAllProjectMcpServers": true
 }

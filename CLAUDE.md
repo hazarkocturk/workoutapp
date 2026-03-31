@@ -61,6 +61,8 @@ npx drizzle-kit push     # Push schema to database
 
 - Writing UI or components → read [`docs/ui.md`](docs/ui.md)
 - Writing data fetching or queries → read [`docs/data-fetching.md`](docs/data-fetching.md)
+- Writing data mutations (create/update/delete) → read [`docs/data-mutation.md`](docs/data-mutation.md)
+- Writing authentication or user identity logic → read [`docs/auth.md`](docs/auth.md)
 
 Never assume the rules — always read the doc file before writing code.
 
@@ -72,6 +74,25 @@ See [`docs/data-fetching.md`](docs/data-fetching.md) for full guidelines. Summar
 - **NEVER** use Route Handlers (`app/api/`) for internal data fetching
 - **ALWAYS** use **Drizzle ORM** — no raw SQL, no fetch calls
 - **ALWAYS** define query functions in `src/db/helpers/` (one file per domain)
+
+## Data Mutation Rules
+
+See [`docs/data-mutation.md`](docs/data-mutation.md) for full guidelines. Summary:
+
+- **ALWAYS** use **Server Actions** for mutations — never Route Handlers
+- **ALWAYS** put Server Actions in `actions.ts` files co-located with the route
+- **ALWAYS** use **Drizzle ORM** via helpers in `src/db/helpers/` — never direct DB calls in actions
+- **NEVER** use `FormData` as Server Action parameter type — use typed Zod-validated objects
+- **ALWAYS** validate input with **Zod** before any database operation
+
+## Auth Rules
+
+See [`docs/auth.md`](docs/auth.md) for full guidelines. Summary:
+
+- **ALWAYS** use **Clerk** for authentication — never custom auth, NextAuth, or any other provider
+- **ALWAYS** use `auth()` from `@clerk/nextjs/server` in Server Components
+- **ALWAYS** protect routes via `middleware.ts` — never add per-page auth guards
+- **NEVER** hardcode or manually derive `userId` — always get it from Clerk
 
 ## UI & Styling Rules
 

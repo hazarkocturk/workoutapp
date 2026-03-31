@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn("dark font-sans", geist.variable)}>
-      <body>
+      <body className="h-screen flex flex-col bg-[#030303]">
         <ClerkProvider>
           <header className="flex items-center justify-between px-6 py-4 border-b border-white/10">
             <span className="text-white font-bold text-lg tracking-tight">💪 WorkoutApp</span>

@@ -1,6 +1,20 @@
 import { db } from "@/db";
 import { workouts, workoutExercises, exercises } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
+
+export async function createWorkout(data: {
+  title: string;
+  date: Date;
+  userId: string;
+}) {
+  return db.insert(workouts).values(data).returning();
+}
+
+export async function deleteWorkout(workoutId: string, userId: string) {
+  return db
+    .delete(workouts)
+    .where(and(eq(workouts.id, workoutId), eq(workouts.userId, userId)));
+}
 
 export async function getWorkoutsByUser(userId: string) {
   const rows = await db

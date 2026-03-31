@@ -8,6 +8,26 @@
 - Yeni bir bileşene ihtiyaç duyulduğunda önce `npx shadcn@latest add <component>` ile shadcn'den ekle.
 - Tailwind class'larını yalnızca shadcn bileşenlerini **stilize etmek** için kullan, sıfırdan bileşen inşa etmek için değil.
 
+## ÖNEMLİ: `asChild` Prop'u Kullanılmaz
+
+Bu proje shadcn/ui'ın **@base-ui/react** tabanlı versiyonunu kullanır — Radix UI **değildir**. Bu nedenle bileşenler `asChild` prop'unu desteklemez.
+
+Bir bileşeni trigger/wrapper olarak başka bir bileşene devretmek için `render` prop kullan:
+
+```tsx
+// ❌ Yanlış — asChild bu projede çalışmaz
+<DialogTrigger asChild>
+  <Button>Aç</Button>
+</DialogTrigger>
+
+// ✅ Doğru — render prop ile devret
+<DialogTrigger render={<Button />}>
+  Aç
+</DialogTrigger>
+```
+
+Bu kural `DialogTrigger`, `DialogClose`, `PopoverTrigger` ve diğer tüm Base UI primitive'leri için geçerlidir.
+
 ## Date Formatting
 
 Date gösterimi için **date-fns** kütüphanesi kullanılmalıdır.

@@ -82,7 +82,7 @@ function HeroGeometric({
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
+    <div className="relative flex-1 w-full flex items-center justify-center overflow-hidden bg-[#030303]">
       <div className="absolute inset-0 bg-linear-to-br from-indigo-500/5 via-transparent to-rose-500/5 blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
@@ -165,7 +165,7 @@ function HeroGeometric({
             animate="visible"
           >
             <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-              Antrenmanlarını takip et, ilerlemenizi gör, hedeflerine ulaş.
+              Antrenmanlarını takip et, ilerlemeni gör, hedeflerine ulaş.
             </p>
           </motion.div>
 

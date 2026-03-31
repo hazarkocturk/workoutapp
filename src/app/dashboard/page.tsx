@@ -16,7 +16,7 @@ export default async function DashboardPage() {
       <div className="max-w-2xl mx-auto space-y-8">
         {/* Header */}
         <div>
-          <h1 className="text-3xl font-bold text-white">Antrenmanlar</h1>
+          <h1 className="text-5xl font-bold text-white font-display">Antrenmanlar</h1>
           <p className="text-white/40 mt-1">Günlük antrenman geçmişini görüntüle</p>
         </div>
 

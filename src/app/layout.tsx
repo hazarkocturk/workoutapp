@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ClerkProvider, SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs";
 import "./globals.css";
-import { Geist } from "next/font/google";
+import { Geist, Space_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const spaceGrotesk = Space_Grotesk({subsets:['latin'],variable:'--font-display',weight:['400','500','600','700']});
 
 export const metadata: Metadata = {
   title: "Workout App",
@@ -18,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn("dark font-sans", geist.variable)}>
+    <html lang="en" className={cn("dark font-sans", geist.variable, spaceGrotesk.variable)}>
       <body className="h-screen flex flex-col bg-[#030303]">
         <ClerkProvider>
           <header className="flex items-center justify-between px-6 py-4 border-b border-white/10">
